@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Uploads\on2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="ServiceStack.Text.Core" Version="5.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\1347419.jpg" />
+    <None Include="wwwroot\images\pexels-photo-131699.jpeg" />
+    <None Include="wwwroot\images\pexels-photo-268533.jpeg" />
+    <None Include="wwwroot\images\pexels-photo-325185.jpeg" />
+    <None Include="wwwroot\images\pexels-photo-374870.jpeg" />
+    <None Include="wwwroot\images\pexels-photo-466685.jpeg" />
+    <None Include="wwwroot\images\pexels-photo-696644.jpeg" />
+    <None Include="wwwroot\Product\images.png" />
+    <None Include="wwwroot\Product\no-pic.png" />
+    <None Include="wwwroot\Product\on2.jpg" />
+    <None Include="wwwroot\Product\onlineProducts.png" />
+  </ItemGroup>
+
+</Project>

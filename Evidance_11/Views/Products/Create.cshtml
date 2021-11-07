@@ -1,0 +1,93 @@
+﻿@model ProductCreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    #Box {
+        margin-left: 180px;
+        margin-right: 270px;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 4px 8px 0 rgb(10 52 47 / 0.2), 0 6px 20px 0 rgba(6, 114, 101, .2);
+        padding: 10px;
+    }
+</style>
+<div class="row" id="Box">
+    <div class="col-12">
+        <h3>Create Product</h3>
+        <form method="post" asp-action="Create" asp-controller="Products" enctype="multipart/form-data" >
+            <div class="form-group row mb-2">
+                <label asp-for="ProductName" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="ProductName" class="form-control form-control-sm" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label asp-for="Price" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="Price" class="form-control form-control-sm" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label asp-for="SalesDate" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="SalesDate" class="form-control form-control-sm" />
+                    <span asp-validation-for="SalesDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label asp-for="Picture" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="file" asp-for="Picture" class="form-control form-control-sm" />
+                    <span asp-validation-for="Picture" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="CustomerId" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-4">
+                    <select asp-for="CustomerId" class="form-select form-select-sm" asp-items="@(new SelectList(ViewBag.Customers, "CustomerId", "CustomerName"))">
+                        <option selected>--Select--</option>
+                    </select>
+                    <span asp-validation-for="CustomerId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row my-1 align-middle">
+                <div class="col-4 offset-2">
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" asp-for="Discontinued" class="form-check-input" />
+                        <label asp-for="Discontinued" class="form-check-label "></label>
+                    </div>
+                    <span asp-validation-for="Discontinued" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <div class="col-10 offset-2">
+                    <button type="reset" class="btn btn-outline-success">Reset</button>
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class=" col-12">
+        <button type="submit" class="btn btn-outline-light">
+            &lt;&lt;&lt;@Html.ActionLink("Back To List", "Index")
+        </button>
+    </div>
+</div>
+@section styles{
+    <link href="~/libs/picker/css/bootstrap-datepicker.standalone.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/picker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $("#SalesDate").datepicker({
+            format: "yyyy-mm-dd"
+        });
+    </script>
+}
